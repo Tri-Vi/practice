@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="shared-styles.html">
@@ -39,15 +41,11 @@
       <paper-button raised on-tap="sendData">Post Request</paper-button>
     </div>
     <div class="card">
-      <div class="circle">5</div>
-      <h1>After Post Request</h1>
-    </div>
-    <div class="card">
-			<h3>serverSuccessObj</h3>
+			<h3>serverSuccessObj Results:</h3>
 			<span>{{ssoDisplay}}</span>
 		</div>
     <div class="card">
-			<h3>serverErrorObj</h3>
+			<h3>serverErrorObj Results:</h3>
 			<span>{{serverErrorObj}}</span>
 		</div>
   </template>
@@ -100,7 +98,6 @@
 
       sendData(event) {
           this.$.postExample.generateRequest();
-        
       }
 
       getSso(serverSuccessObj){
